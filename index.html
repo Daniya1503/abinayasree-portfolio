@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abinayasree Muthusamy - Portfolio</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0066FF;      /* Nexkauf Primary Blue */
+            --dark-blue: #0A2540;         /* Header/Heading Dark Blue */
+            --accent-blue: #2563EB;       /* Hover Accent Blue */
+            --bg-light: #F4F7FC;          /* Clean Light Blue-Gray Background */
+            --white: #FFFFFF;             /* White Card Background */
+            --text-dark: #1E293B;         /* Body Text */
+            --text-muted: #64748B;        /* Muted Text */
+            --border-color: #E2E8F0;      /* Subtle Border */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark-blue);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero / Header Section */
+        header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: transform 0.2s ease, color 0.2s ease;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: #93C5FD;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 35px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.04);
+        }
+
+        .section-title {
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+
+        /* Experience & Projects Cards */
+        .card {
+            border-left: 4px solid var(--primary-blue);
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--dark-blue);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .card .subtitle {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .card .date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background-color: #E0EDFF;
+            color: var(--primary-blue);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 102, 255, 0.15);
+        }
+
+        /* Contact Button */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 10px; }
+            header h1 { font-size: 2rem; }
+            .section { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="logo">Abinayasree M</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header>
+        <h1>Abinayasree Muthusamy</h1>
+        <p>Founder & Entrepreneur | Tech Professional</p>
+        <div class="social-links">
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://nexkauf.in" target="_blank"><i class="fas fa-globe"></i></a>
+            <a href="mailto:contact@nexkauf.in"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <p>Passionate professional dedicated to driving innovation, business strategy, and technological advancements. Focused on scaling impactful business solutions and crafting effective strategies.</p>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="card">
+                <h3>Founder & Executive</h3>
+                <div class="subtitle">Nexkauf</div>
+                <div class="date">Present</div>
+                <p>Leading strategic business vision, tech implementation, and product development to deliver seamless retail and digital solutions.</p>
+            </div>
+
+            <div class="card">
+                <h3>Professional Background</h3>
+                <div class="subtitle">LinkedIn Portfolio Overview</div>
+                <div class="date">2021 - Present</div>
+                <p>Extensive background in project management, team leadership, and digital portfolio development.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Entrepreneurship</span>
+                <span class="skill-tag">Business Strategy</span>
+                <span class="skill-tag">Product Management</span>
+                <span class="skill-tag">Tech Leadership</span>
+                <span class="skill-tag">POS Systems</span>
+                <span class="skill-tag">Strategic Planning</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Interested in collaborating or learning more about my projects? Feel free to reach out directly.</p>
+            <br>
+            <a href="https://nexkauf.in" target="_blank" class="btn">Visit Nexkauf.in</a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; Abinayasree Muthusamy. All Rights Reserved. Designed with Blue & White Theme.
+    </footer>
+
+</body>
+</html>
