@@ -14,7 +14,9 @@
     }
 
     body {
-      background-color: #0f0f11;
+      /* Soft blue-tinted modern gradient background from screenshot */
+      background: linear-gradient(135deg, #f4f8ff 0%, #e8f1fd 50%, #f0f6ff 100%);
+      background-attachment: fixed;
       color: #ffffff;
       line-height: 1.6;
     }
@@ -26,12 +28,14 @@
 
     /* Header & Navigation */
     header {
-      background-color: #18181c;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid #2a2a30;
+      border-bottom: 1px solid rgba(0, 123, 255, 0.15);
+      box-shadow: 0 4px 20px rgba(0, 123, 255, 0.05);
     }
 
     .nav-container {
@@ -55,13 +59,14 @@
     }
 
     nav a {
-      color: #ffffff;
+      color: #007bff;
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #007bff;
+      color: #0056b3;
     }
 
     /* Hero Section */
@@ -94,21 +99,27 @@
       color: #ffffff;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0, 123, 255, 0.3);
+      transition: all 0.3s ease;
     }
 
     .btn:hover {
       background-color: #0056b3;
+      transform: translateY(-2px);
     }
 
     /* Section Styling */
     section {
       max-width: 1000px;
-      margin: 0 auto;
-      padding: 4rem 1rem;
-      border-bottom: 1px solid #2a2a30;
+      margin: 2rem auto;
+      padding: 3rem 2rem;
+      /* Styled light blue container cards to keep white text clearly legible */
+      background: linear-gradient(145deg, #18181c, #222228);
+      border-radius: 16px;
+      border: 1px solid rgba(0, 123, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 102, 255, 0.08);
     }
 
     section h2 {
@@ -129,7 +140,7 @@
     .card {
       background-color: #18181c;
       padding: 1.5rem;
-      border-radius: 8px;
+      border-radius: 12px;
       border: 1px solid #2a2a30;
     }
 
@@ -161,7 +172,7 @@
     .exp-item {
       background-color: #18181c;
       padding: 1.5rem;
-      border-radius: 8px;
+      border-radius: 12px;
       border: 1px solid #2a2a30;
       margin-bottom: 1.5rem;
     }
@@ -187,8 +198,10 @@
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #18181c;
-      color: #ffffff;
+      background: rgba(255, 255, 255, 0.9);
+      border-top: 1px solid rgba(0, 123, 255, 0.15);
+      margin-top: 3rem;
+      color: #333333;
     }
 
     /* Responsive */
@@ -200,6 +213,11 @@
       
       .hero h1 {
         font-size: 2.2rem;
+      }
+
+      section {
+        margin: 1rem;
+        padding: 2rem 1rem;
       }
     }
   </style>
@@ -225,7 +243,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" style="background: linear-gradient(145deg, #18181c, #222228);">
     <!-- Name in Blue -->
     <h1><span class="blue-text">Abinayasree (Siri) Muthusamy</span></h1>
     <div class="tagline">Marketing Consultant | EdTech Strategist | Ex-Accenture Engineer</div>
@@ -356,7 +374,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" style="border-bottom: none;">
+  <section id="contact">
     <h2>Get in Touch</h2>
     <div style="text-align: center;">
       <p>Open for collaborations in EdTech content, career guidance sessions, and digital marketing consulting.</p>
@@ -373,5 +391,3 @@
 
 </body>
 </html>
-
-                    
