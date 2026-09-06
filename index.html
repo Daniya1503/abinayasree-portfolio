@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,21 +14,21 @@
     }
 
     body {
-      /* Soft blue-tinted modern gradient background from screenshot */
+      /* Soft blue-tinted modern gradient background */
       background: linear-gradient(135deg, #f4f8ff 0%, #e8f1fd 50%, #f0f6ff 100%);
       background-attachment: fixed;
-      color: #ffffff;
+      color: #1e293b; /* Dark text for perfect visibility */
       line-height: 1.6;
     }
 
     /* Color Specific Classes */
     .blue-text {
-      color: #007bff; /* Bright blue */
+      color: #007bff; /* Bright blue for the name */
     }
 
     /* Header & Navigation */
     header {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
       padding: 1rem 2rem;
       position: sticky;
@@ -59,20 +59,20 @@
     }
 
     nav a {
-      color: #007bff;
+      color: #1e293b; /* Dark text for links */
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #0056b3;
+      color: #007bff;
     }
 
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 5rem 1rem;
+      padding: 5rem 1rem 3rem 1rem;
       max-width: 800px;
       margin: 0 auto;
     }
@@ -84,12 +84,13 @@
 
     .hero .tagline {
       font-size: 1.25rem;
-      color: #ffffff;
+      color: #1e293b; /* Dark text */
+      font-weight: 600;
       margin-bottom: 1rem;
     }
 
     .hero p {
-      color: #ffffff;
+      color: #475569; /* Dark secondary text */
       margin-bottom: 2rem;
     }
 
@@ -115,18 +116,18 @@
       max-width: 1000px;
       margin: 2rem auto;
       padding: 3rem 2rem;
-      /* Soft light blue card container matching the blue & white theme */
-      background: rgba(255, 255, 255, 0.75);
+      /* Soft white card container matching screenshot */
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
       border-radius: 16px;
-      border: 1px solid rgba(0, 123, 255, 0.18);
-      box-shadow: 0 10px 30px rgba(0, 102, 255, 0.08);
+      border: 1px solid rgba(0, 123, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 102, 255, 0.05);
     }
 
     section h2 {
       font-size: 2rem;
       margin-bottom: 1.5rem;
-      color: #ffffff;
+      color: #0f172a; /* Dark heading text */
       text-align: center;
     }
 
@@ -139,7 +140,6 @@
     }
 
     .card {
-      /* Soft light blue card background replacing dark black box */
       background: #ffffff;
       padding: 1.5rem;
       border-radius: 12px;
@@ -148,12 +148,12 @@
     }
 
     .card h3 {
-      color: #ffffff;
+      color: #0f172a; /* Dark card title */
       margin-bottom: 0.5rem;
     }
 
     .card p {
-      color: #ffffff;
+      color: #475569; /* Dark body text */
     }
 
     .tags {
@@ -164,17 +164,16 @@
     }
 
     .tag {
-      background-color: rgba(0, 123, 255, 0.12);
-      color: #ffffff;
+      background-color: #e0edff;
+      color: #0056b3; /* Darker blue text for readability */
       padding: 0.25rem 0.75rem;
       border-radius: 15px;
       font-size: 0.85rem;
-      border: 1px solid rgba(0, 123, 255, 0.2);
+      font-weight: 600;
     }
 
     /* Experience Timeline Items */
     .exp-item {
-      /* Soft light blue card background replacing dark black box */
       background: #ffffff;
       padding: 1.5rem;
       border-radius: 12px;
@@ -186,18 +185,23 @@
     .exp-title {
       font-size: 1.2rem;
       font-weight: bold;
-      color: #ffffff;
+      color: #0f172a; /* Dark title */
     }
 
     .exp-company {
-      color: #ffffff;
+      color: #007bff; /* Blue accent for company */
       font-size: 0.95rem;
+      font-weight: 600;
     }
 
     .exp-date {
-      color: #ffffff;
+      color: #64748b; /* Muted dark date text */
       font-size: 0.85rem;
       margin-bottom: 0.75rem;
+    }
+
+    .exp-item p {
+      color: #475569; /* Dark paragraph text */
     }
 
     /* Footer */
@@ -207,7 +211,8 @@
       background: rgba(255, 255, 255, 0.9);
       border-top: 1px solid rgba(0, 123, 255, 0.15);
       margin-top: 3rem;
-      color: #333333;
+      color: #1e293b;
+      font-weight: 500;
     }
 
     /* Responsive */
@@ -249,7 +254,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" style="background: transparent; border: none; box-shadow: none;">
     <!-- Name in Blue -->
     <h1><span class="blue-text">Abinayasree (Siri) Muthusamy</span></h1>
     <div class="tagline">Marketing Consultant | EdTech Strategist | Ex-Accenture Engineer</div>
@@ -397,4 +402,5 @@
 
 </body>
 </html>
+
   
