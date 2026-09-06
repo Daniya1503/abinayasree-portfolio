@@ -1,294 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abinayasree Muthusamy - Portfolio</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-blue: #0066FF;      /* Nexkauf Primary Blue */
-            --dark-blue: #0A2540;         /* Header/Heading Dark Blue */
-            --accent-blue: #2563EB;       /* Hover Accent Blue */
-            --bg-light: #F4F7FC;          /* Clean Light Blue-Gray Background */
-            --white: #FFFFFF;             /* White Card Background */
-            --text-dark: #1E293B;         /* Body Text */
-            --text-muted: #64748B;        /* Muted Text */
-            --border-color: #E2E8F0;      /* Subtle Border */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
+    body {
+      background-color: #0f0f11;
+      color: #ffffff;
+      line-height: 1.6;
+    }
 
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+    /* Color Specific Classes */
+    .blue-text {
+      color: #007bff; /* Bright blue */
+    }
 
-        /* Navigation */
-        nav {
-            background-color: var(--dark-blue);
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+    /* Header & Navigation */
+    header {
+      background-color: #18181c;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #2a2a30;
+    }
 
-        .logo {
-            color: var(--white);
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #007bff; /* Name in Header */
+    }
 
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
 
-        .nav-links a:hover {
-            color: var(--primary-blue);
-        }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        /* Hero / Header Section */
-        header {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 70px 20px;
-        }
+    nav a:hover {
+      color: #007bff;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 20px auto;
-        }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: transform 0.2s ease, color 0.2s ease;
-            display: inline-block;
-        }
+    .hero .tagline {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
 
-        .social-links a:hover {
-            transform: translateY(-3px);
-            color: #93C5FD;
-        }
+    .hero p {
+      color: #ffffff;
+      margin-bottom: 2rem;
+    }
 
-        /* Main Container */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
 
-        .section {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 35px;
-            margin-bottom: 35px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.04);
-        }
+    .btn:hover {
+      background-color: #0056b3;
+    }
 
-        .section-title {
-            color: var(--dark-blue);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            border-bottom: 3px solid var(--primary-blue);
-            display: inline-block;
-            padding-bottom: 6px;
-        }
+    /* Section Styling */
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      border-bottom: 1px solid #2a2a30;
+    }
 
-        /* Experience & Projects Cards */
-        .card {
-            border-left: 4px solid var(--primary-blue);
-            background-color: var(--bg-light);
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 20px;
-        }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      text-align: center;
+    }
 
-        .card h3 {
-            color: var(--dark-blue);
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
+    /* Cards & Grids */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
 
-        .card .subtitle {
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-        }
+    .card {
+      background-color: #18181c;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #2a2a30;
+    }
 
-        .card .date {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-        }
+    .card h3 {
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
 
-        /* Skills Tags */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
+    .card p {
+      color: #ffffff;
+    }
 
-        .skill-tag {
-            background-color: #E0EDFF;
-            color: var(--primary-blue);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: 1px solid rgba(0, 102, 255, 0.15);
-        }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
 
-        /* Contact Button */
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 12px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s ease;
-            margin-top: 10px;
-        }
+    .tag {
+      background-color: #2a2a30;
+      color: #ffffff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+    }
 
-        .btn:hover {
-            background-color: var(--dark-blue);
-        }
+    /* Experience Timeline Items */
+    .exp-item {
+      background-color: #18181c;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #2a2a30;
+      margin-bottom: 1.5rem;
+    }
 
-        /* Footer */
-        footer {
-            background-color: var(--dark-blue);
-            color: var(--white);
-            text-align: center;
-            padding: 25px;
-            font-size: 0.9rem;
-            margin-top: 50px;
-        }
+    .exp-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
 
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 10px; }
-            header h1 { font-size: 2rem; }
-            .section { padding: 25px 20px; }
-        }
-    </style>
+    .exp-company {
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .exp-date {
+      color: #ffffff;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #18181c;
+      color: #ffffff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#" class="logo">Abinayasree M</a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <!-- Name in Blue -->
+      <div class="logo">Abinayasree Muthusamy</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Header / Hero Section -->
-    <header>
-        <h1>Abinayasree Muthusamy</h1>
-        <p>Founder & Entrepreneur | Tech Professional</p>
-        <div class="social-links">
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://nexkauf.in" target="_blank"><i class="fas fa-globe"></i></a>
-            <a href="mailto:contact@nexkauf.in"><i class="fas fa-envelope"></i></a>
-        </div>
-    </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Name in Blue -->
+    <h1><span class="blue-text">Abinayasree (Siri) Muthusamy</span></h1>
+    <div class="tagline">Marketing Consultant | EdTech Strategist | Ex-Accenture Engineer</div>
+    <p>
+      Bridging software engineering, data analysis, and EdTech innovation. IIT Madras Carbon Zero Challenge Awardee and Best Outgoing Student in Extracurriculars (Kongu Engineering College).
+    </p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
 
-    <div class="container">
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div>
+      <p>
+        I started my career as a Software Engineer at Accenture, learning how technology solves real-world problems. Today, I apply that structured, practical mindset to EdTech, competitive exam guidance (Officer-level exams like IBPS, SSC, TNPSC), and digital marketing.
+      </p>
+      <br>
+      <p>
+        My expertise spans <strong>SQL, Python, JavaScript, WordPress, Data Analysis, and AI Automation in Education</strong>. I focus on creating actionable breakdowns, content, and tools that offer clear value and practical guidance.
+      </p>
+    </div>
+  </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <p>Passionate professional dedicated to driving innovation, business strategy, and technological advancements. Focused on scaling impactful business solutions and crafting effective strategies.</p>
-        </section>
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Services Provided</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Career Development & Coaching</h3>
+        <p>Interview preparation, career break recovery strategies, and transition mentoring into tech and government roles.</p>
+      </div>
+      <div class="card">
+        <h3>Digital & Content Marketing</h3>
+        <p>Lead generation, content strategy, brand building, and growth marketing consultancy for businesses and startups.</p>
+      </div>
+      <div class="card">
+        <h3>Educational Consulting</h3>
+        <p>EdTech content creation, structured syllabus planning for officer-level exams, and learning system design.</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2 class="section-title">Experience</h2>
-            
-            <div class="card">
-                <h3>Founder & Executive</h3>
-                <div class="subtitle">Nexkauf</div>
-                <div class="date">Present</div>
-                <p>Leading strategic business vision, tech implementation, and product development to deliver seamless retail and digital solutions.</p>
-            </div>
-
-            <div class="card">
-                <h3>Professional Background</h3>
-                <div class="subtitle">LinkedIn Portfolio Overview</div>
-                <div class="date">2021 - Present</div>
-                <p>Extensive background in project management, team leadership, and digital portfolio development.</p>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-container">
-                <span class="skill-tag">Entrepreneurship</span>
-                <span class="skill-tag">Business Strategy</span>
-                <span class="skill-tag">Product Management</span>
-                <span class="skill-tag">Tech Leadership</span>
-                <span class="skill-tag">POS Systems</span>
-                <span class="skill-tag">Strategic Planning</span>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2 class="section-title">Get In Touch</h2>
-            <p>Interested in collaborating or learning more about my projects? Feel free to reach out directly.</p>
-            <br>
-            <a href="https://nexkauf.in" target="_blank" class="btn">Visit Nexkauf.in</a>
-        </section>
-
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    
+    <div class="exp-item">
+      <div class="exp-title">Marketing Consultant (Freelance)</div>
+      <div class="exp-company">Nexkauf — Coimbatore, Tamil Nadu (Remote)</div>
+      <div class="exp-date">Jul 2026 – Present</div>
+      <p>Driving digital marketing campaigns, sales partner acquisition strategies, and lead generation initiative planning.</p>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; Abinayasree Muthusamy. All Rights Reserved. Designed with Blue & White Theme.
-    </footer>
+    <div class="exp-item">
+      <div class="exp-title">Executive & Director of Event Management</div>
+      <div class="exp-company">Abivarman Academy — Erode, Tamil Nadu (Hybrid)</div>
+      <div class="exp-date">Jun 2021 – Present</div>
+      <p>Leading product innovation, event operations, industry training programs, and educational outreach initiatives.</p>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-title">Content Developer & Business Development Manager</div>
+      <div class="exp-company">KavanagarKarjanai</div>
+      <div class="exp-date">Mar 2021 – Jun 2024</div>
+      <p>Managed educational content production, learning material design, and strategic business growth outreach.</p>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-title">Software Prod & Plat Engineering Analyst</div>
+      <div class="exp-company">Accenture — Bengaluru, Karnataka</div>
+      <div class="exp-date">May 2018 – Feb 2021</div>
+      <p>Collaborated with cross-functional product development teams, engineered solutions using MySQL, VB.NET, REST APIs, and led software quality assurance workflows.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Featured Engineering Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Optimal Energy Management Controller</h3>
+        <p>Design and implementation of an optimal energy controller for effective utilization of solar-powered online UPS systems.</p>
+        <div class="tags">
+          <span class="tag">Solar Energy</span>
+          <span class="tag">Embedded Systems</span>
+          <span class="tag">Energy Management</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>SMART HOME – Energy Efficient Building</h3>
+        <p>Developed a smart home automation architecture designed to optimize energy consumption using IoT components.</p>
+        <div class="tags">
+          <span class="tag">Internet of Things (IoT)</span>
+          <span class="tag">Home Automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Education Section -->
+  <section id="skills">
+    <h2>Core Skills & Certifications</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Technical Stack</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">SQL / MySQL</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">WordPress</span>
+          <span class="tag">HTML5/CSS3</span>
+          <span class="tag">Agile Methodologies</span>
+          <span class="tag">AWS / Azure</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Education & Credentials</h3>
+        <p><strong>B.E. Electrical & Electronics Engineering</strong><br>Kongu Engineering College (2014 – 2018)</p>
+        <br>
+        <p><strong>Master of Business Administration (General)</strong><br>Jobaaj Learnings</p>
+        <div class="tags" style="margin-top: 1rem;">
+          <span class="tag">Kaggle Certified in Pandas</span>
+          <span class="tag">BEC Cambridge English</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" style="border-bottom: none;">
+    <h2>Get in Touch</h2>
+    <div style="text-align: center;">
+      <p>Open for collaborations in EdTech content, career guidance sessions, and digital marketing consulting.</p>
+      <br>
+      <a href="https://www.linkedin.com" target="_blank" class="btn">Connect on LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <!-- Name in Blue -->
+    <p>© 2026 <span class="blue-text">Abinayasree Muthusamy</span>. Built with HTML & CSS.</p>
+  </footer>
 
 </body>
 </html>
+
+                    
