@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -115,10 +115,11 @@
       max-width: 1000px;
       margin: 2rem auto;
       padding: 3rem 2rem;
-      /* Styled light blue container cards to keep white text clearly legible */
-      background: linear-gradient(145deg, #18181c, #222228);
+      /* Soft light blue card container matching the blue & white theme */
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
       border-radius: 16px;
-      border: 1px solid rgba(0, 123, 255, 0.15);
+      border: 1px solid rgba(0, 123, 255, 0.18);
       box-shadow: 0 10px 30px rgba(0, 102, 255, 0.08);
     }
 
@@ -138,10 +139,12 @@
     }
 
     .card {
-      background-color: #18181c;
+      /* Soft light blue card background replacing dark black box */
+      background: #ffffff;
       padding: 1.5rem;
       border-radius: 12px;
-      border: 1px solid #2a2a30;
+      border: 1px solid rgba(0, 123, 255, 0.15);
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.05);
     }
 
     .card h3 {
@@ -161,19 +164,22 @@
     }
 
     .tag {
-      background-color: #2a2a30;
+      background-color: rgba(0, 123, 255, 0.12);
       color: #ffffff;
       padding: 0.25rem 0.75rem;
       border-radius: 15px;
       font-size: 0.85rem;
+      border: 1px solid rgba(0, 123, 255, 0.2);
     }
 
     /* Experience Timeline Items */
     .exp-item {
-      background-color: #18181c;
+      /* Soft light blue card background replacing dark black box */
+      background: #ffffff;
       padding: 1.5rem;
       border-radius: 12px;
-      border: 1px solid #2a2a30;
+      border: 1px solid rgba(0, 123, 255, 0.15);
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.05);
       margin-bottom: 1.5rem;
     }
 
@@ -243,7 +249,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" style="background: linear-gradient(145deg, #18181c, #222228);">
+  <section class="hero">
     <!-- Name in Blue -->
     <h1><span class="blue-text">Abinayasree (Siri) Muthusamy</span></h1>
     <div class="tagline">Marketing Consultant | EdTech Strategist | Ex-Accenture Engineer</div>
@@ -391,3 +397,4 @@
 
 </body>
 </html>
+  
